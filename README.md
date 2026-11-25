@@ -23,6 +23,11 @@ node build.mjs
 - Типы блоков: `hero`, `bento3`, `about`, `problemSolution`, `steps`, `features`, `heatmap` (планер недели), `persona` (профиль навыков с диаграммой), `quote`, `overview`, `tour` (экскурсия: скриншоты с подписями и вкладками), `offer` (автор и цена), `who`, `reviews`, `final`. Есть и запасные: `tracks`, `counts`, `authors`, `prices`.
 - Разметка каждого типа в `gh/assets/render.js` (объект `R`). Иконки там же, в `ICONS`.
 
+## Живой сайт (п.4а)
+- `node build.mjs` после сборки открывает страницы в Chrome и кладёт готовую разметку прямо в HTML (`data-prerendered`): контент виден и без JS.
+- Анимации в `gh/assets/render.js` → `initReveal` (появление по очереди, счётчики, линия шагов, диаграмма, часы, цена) и в конце `style.css` (раздел «4а»). Всё движение выключается при «уменьшить движение».
+- Иконки: имена в JSON (`icon`, `icons`), сами SVG в `render.js` → `ICONS`.
+
 ## Цвета и шрифты
 CSS-переменные в начале `gh/assets/style.css` (`--blue`, `--lime`, `--bg`, `--ink`, `--display`, `--body`).
 Быстро поменять цвет можно и в JSON → `theme`, например `theme: { blue: '#1f4fd8' }`.

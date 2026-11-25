@@ -30,10 +30,42 @@
     question: '<circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.2-2.4 3.8M12 17.2v.1"/>',
     users: '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9.5" r="2.5"/><path d="M16.5 14.6A5 5 0 0 1 22 19.5"/>',
     reset: '<path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4.5h4.5"/>',
+    clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    calendar: '<rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4M8 14h2M14 14h2"/>',
+    repeat: '<path d="M4 11V9a3 3 0 0 1 3-3h12M16 3l3 3-3 3M20 13v2a3 3 0 0 1-3 3H5M8 21l-3-3 3-3"/>',
+    radar: '<path d="M12 3l8 6-3 10H7L4 9z"/><path d="M12 8l3.5 2.5-1.3 4H9.8l-1.3-4z"/>',
+    bulb: '<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.8V16h5v-.3c0-.7.4-1.4 1-1.8A6 6 0 0 0 12 3z"/>',
+    speech: '<path d="M4 5h16v11h-7l-4 4v-4H4z"/><path d="M8 9h8M8 12h5"/>',
+    video: '<rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/>',
+    exam: '<path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M9.5 14l2 2 3.5-4"/>',
+    trend: '<path d="M3 17l5-5 4 3 4-6 5 4"/><path d="M3 21h18"/>',
+    school: '<path d="M2.5 9.5 12 5l9.5 4.5L12 14z"/><path d="M6 11.5V16c2 2 10 2 12 0v-4.5M21.5 9.5V15"/>',
+    plane: '<path d="M10.5 13.5 3 11l1.5-1.5 7.5 1 4.5-4.5a2 2 0 0 1 3 3L15 13.5l1 7.5-1.5 1.5-2.5-7.5-3 3V21l-1.5 1-1-3.5L3 17.5l1-1.5h2.5z"/>',
+    mute: '<path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 9.5l5 5M21.5 9.5l-5 5"/>',
+    seed: '<path d="M12 21v-6"/><path d="M12 15c-4 0-6-2.5-6-6 4 0 6 2.5 6 6z"/>',
+    sprout: '<path d="M12 21v-9"/><path d="M12 12c-4 0-6-2.5-6-6 4 0 6 2.5 6 6zM12 15c0-3 2-5 6-5 0 3-2 5-6 5z"/>',
+    tree: '<path d="M12 22v-5"/><path d="M12 2 5 12h4l-3 5h12l-3-5h4z"/>',
+    tv: '<rect x="3" y="6" width="18" height="12" rx="2"/><path d="M8 21h8M12 18v3M9 2l3 4 3-4"/>',
+    certificate: '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 8h10M7 11h6"/><circle cx="16" cy="17" r="3"/><path d="M14.5 19.5 14 22l2-1 2 1-.5-2.5"/>',
+    home: '<path d="M3 11 12 4l9 7"/><path d="M5.5 9.5V20h13V9.5M10 20v-5h4v5"/>',
+    grammar: '<path d="M3 18 7.5 6 12 18M4.7 14h5.6"/><path d="M14 18v-4.5a2.5 2.5 0 0 1 5 0V18M19 15.5h-3.5a1.5 1.5 0 0 0 0 3h3.5"/>',
+    tap: '<path d="M9 11V5a1.5 1.5 0 0 1 3 0v6"/><path d="M12 10a1.5 1.5 0 0 1 3 0v1a1.5 1.5 0 0 1 3 0v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-4.6-2.2L4 15.3a1.5 1.5 0 0 1 2.3-1.9L9 16V11"/>',
+    stamp: '<path d="M9 13V9.5a3 3 0 1 1 6 0V13"/><path d="M4 13h16v4H4zM6 20h12"/>',
+    briefcase: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8.5 7V5.5A1.5 1.5 0 0 1 10 4h4a1.5 1.5 0 0 1 1.5 1.5V7M3 12.5h18"/>',
+    stairs: '<path d="M3 20h5v-5h5v-5h5V5h3"/>',
+    euro: '<path d="M17.5 6.5A6.5 6.5 0 1 0 17.5 17.5"/><path d="M4 10.5h9M4 13.5h9"/>',
+    infinity: '<path d="M7.5 15.5a3.5 3.5 0 1 1 0-7c3.5 0 5.5 7 9 7a3.5 3.5 0 1 0 0-7c-3.5 0-5.5 7-9 7z"/>',
+    cart: '<path d="M3 4h2.5l2.2 11h10.6L20.5 8H7"/><circle cx="9.5" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/>',
+    grid: '<rect x="3.5" y="4" width="17" height="16" rx="2.5"/><path d="M3.5 9.5h17M3.5 15h17M9 4v16M15 4v16"/>',
+    sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/>',
+    smile: '<circle cx="12" cy="12" r="9"/><path d="M8.5 14.5c1.8 2 5.2 2 7 0M9 9.5v.5M15 9.5v.5"/>',
+    layers: '<path d="M12 3 3 8l9 5 9-5z"/><path d="M3 12.5l9 5 9-5M3 16.5l9 5 9-5"/>',
+    target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>',
     quote: '<path d="M4 18v-5.5C4 8.5 6 6 10 5.5M14 18v-5.5c0-4 2-6.5 6-7M4 18h5v-5H4M14 18h5v-5h-5" fill="currentColor" stroke="none"/>'
   };
   function ico(name, cls) { return '<svg class="ico ' + (cls || '') + '" viewBox="0 0 24 24" ' + P + ' aria-hidden="true">' + (ICONS[name] || '') + '</svg>'; }
   var QUOTE = '<svg viewBox="0 0 64 52" aria-hidden="true" class="q-ico"><path fill="currentColor" d="M0 52V30C0 13 9 3 26 0l3 7C19 10 14 16 14 24h12v28H0zm35 0V30C35 13 44 3 61 0l3 7c-10 3-15 9-15 17h12v28H35z"/></svg>';
+  var CLOCK = '<svg class="b3-clock" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="2"/><path class="clock-sector" d="M40 40V6A34 34 0 0 1 69.4 23z" fill="var(--lime)"/><g class="clock-hand"><path d="M40 40V12" stroke="#fff" stroke-width="3" stroke-linecap="round"/></g><circle cx="40" cy="40" r="4" fill="#fff"/></svg>';
   var BRAND_MARK = '<svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="12" fill="var(--blue)"/><path d="M12 11h7a9 9 0 0 1 0 18h-7z" fill="none" stroke="#fff" stroke-width="3.4" stroke-linejoin="round"/><circle cx="28.5" cy="12.5" r="3.5" fill="var(--lime)"/></svg>';
 
   /* ---------- помощники ---------- */
@@ -46,7 +78,7 @@
       (o.w ? ' width="' + o.w + '" height="' + o.h + '"' : '') + (eager ? ' fetchpriority="high"' : ' loading="lazy"') + ' decoding="async">';
   }
   function btn(b, extra) {
-    var i = b.icon ? ico(b.icon) : (/^https?:/.test(href(b.href)) || b.href[0] === '#' ? ico('arrow', 'ico-arrow') : '');
+    var i = b.icon ? ico(b.icon) : b.href === '@buy' ? ico('cart', 'ico-cart') : (/^https?:/.test(href(b.href)) || b.href[0] === '#' ? ico('arrow', 'ico-arrow') : '');
     if (b.href === '#share') return '<button type="button" class="btn btn-' + (b.style || 'light') + ' ' + (extra || '') + '" data-share>' + esc(b.text) + ico('share') + '</button>';
     return '<a class="btn btn-' + (b.style || 'light') + ' ' + (extra || '') + '" href="' + esc(href(b.href)) + '"' + ext(b.href) + '>' + esc(b.text) + i + '</a>';
   }
@@ -56,6 +88,7 @@
       '<h2 class="sec-title">' + (opt.titleHtml || esc(b.title)) + '</h2></div>' +
       (b.text ? '<div><p class="sec-text">' + esc(b.text) + '</p>' + (opt.after || '') + '</div>' : (opt.after ? '<div>' + opt.after + '</div>' : '')) + '</div>';
   }
+  function num(v) { var m = String(v).match(/^(\d+)(.*)$/); return m ? '<span data-count-to="' + m[1] + '">' + m[1] + '</span>' + esc(m[2]) : esc(v); }
   function show(x) { return PAGE === 'lesson' ? !x.ad : !x.lesson; }
 
   /* ---------- блоки ---------- */
@@ -81,7 +114,7 @@
 
   R.bento3 = function (b) {
     return '<section class="wrap"><div class="bento3">' +
-      '<article class="card dark rv"><p class="b3-label">' + esc(b.dark.label) + '</p><h2 class="b3-title">' + esc(b.dark.title) + '</h2></article>' +
+      '<article class="card dark rv"><p class="b3-label">' + esc(b.dark.label) + '</p><h2 class="b3-title">' + esc(b.dark.title) + '</h2>' + CLOCK + '</article>' +
       '<article class="card rv"><div class="b3-media"><button type="button" class="play" data-video aria-label="Смотреть видео">' + ico('play') + '</button><span class="b3-time">' + esc(b.white.time) + '</span></div>' + img(b.white.image, 'b3-obj') + '</article>' +
       '<article class="card lime rv"><h2 class="b3-title">' + esc(b.lime.title) + '</h2>' + img(b.lime.image, 'b3-plant') + '</article>' +
       '</div></section>';
@@ -89,9 +122,9 @@
 
   R.about = function (b) {
     return '<section class="wrap sec" id="' + b.id + '"><div class="about rv">' +
-      '<div class="about-label"><span class="pill-mini"><i></i>' + esc(b.label) + '</span><span class="num-tag">' + esc(b.num) + '</span></div>' +
+      '<div class="about-label"><span class="pill-mini"><i></i>' + esc(b.label) + '</span><span class="num-tag">' + esc(b.num) + '</span>' + (b.image ? img(b.image, 'about-img') : '') + '</div>' +
       '<p class="about-text">' + esc(b.dark) + ' <span>' + esc(b.gray) + '</span></p></div>' +
-      '<div class="stats rv">' + b.stats.map(function (s) { return '<div class="stat"><b>' + esc(s.value) + '</b><span>' + esc(s.text) + '</span></div>'; }).join('') + '</div>' +
+      '<div class="stats">' + b.stats.map(function (s) { return '<div class="stat rv"><span class="stat-ico">' + ico(s.icon || 'clock') + '</span><b>' + num(s.value) + '</b><span>' + esc(s.text) + '</span></div>'; }).join('') + '</div>' +
       '<div class="strip rv"><p>' + esc(b.stripTitle) + '</p><ul>' + b.strip.map(function (s) { return '<li>' + ico(s.icon) + esc(s.text) + '</li>'; }).join('') + '</ul></div>' +
       '</section>';
   };
@@ -99,10 +132,10 @@
   R.problemSolution = function (b) {
     var rows = b.rows.map(function (r, i) {
       var n = ('0' + (i + 1)).slice(-2);
-      return '<div class="ps-row rv">' +
-        '<div class="ps-card prob"><div class="ps-top">' + ico('xCircle', 'ps-x') + '<span class="num-tag">' + n + '</span></div><h3>' + esc(r.problem[0]) + '</h3><p>' + esc(r.problem[1]) + '</p></div>' +
-        '<div class="ps-link" aria-hidden="true"><span class="ps-arrow">' + ico('arrow') + '</span></div>' +
-        '<div class="ps-card sol ' + r.color + '"><div class="ps-top"><span class="ps-ok">' + ico('check') + '</span><span class="num-tag">' + n + '</span></div><h3>' + esc(r.solution[0]) + '</h3><p>' + esc(r.solution[1]) + '</p></div>' +
+      return '<div class="ps-row">' +
+        '<div class="ps-card prob rv"><div class="ps-top">' + ico('xCircle', 'ps-x') + '<span class="num-tag">' + n + '</span></div><h3>' + esc(r.problem[0]) + '</h3><p>' + esc(r.problem[1]) + '</p></div>' +
+        '<div class="ps-link rv" aria-hidden="true"><span class="ps-arrow">' + ico('arrow') + '</span></div>' +
+        '<div class="ps-card sol rv ' + r.color + '"><div class="ps-top"><span class="ps-ok">' + ico('check') + '</span><span class="num-tag">' + n + '</span></div><h3>' + esc(r.solution[0]) + '</h3><p>' + esc(r.solution[1]) + '</p></div>' +
         '</div>';
     }).join('');
     return '<section class="wrap"><div class="ps sec on-dark" style="padding-top:80px">' + head(b) +
@@ -111,8 +144,8 @@
 
   R.steps = function (b) {
     return '<section class="wrap" id="' + b.id + '"><div class="steps sec on-dark" style="padding-top:80px">' + head(b) +
-      '<div class="steps-grid">' + b.items.map(function (s, i) {
-        return '<a class="step rv' + (s.accent ? ' lime' : '') + '" href="' + esc(s.href) + '"><div class="step-top"><span class="step-n">0' + (i + 1) + '</span><span class="step-go">' + ico('arrow') + '</span></div>' +
+      '<div class="steps-track rv" aria-hidden="true"><i></i></div><div class="steps-grid">' + b.items.map(function (s, i) {
+        return '<a class="step rv' + (s.accent ? ' lime' : '') + '" href="' + esc(s.href) + '"><div class="step-top"><span class="step-n">0' + (i + 1) + '</span><span class="step-ico">' + ico(s.icon || 'arrow') + '</span></div>' +
           '<h3>' + esc(s.title) + '</h3><p>' + esc(s.text) + '</p><div class="tags">' + s.tags.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('') + '</div></a>';
       }).join('') + '</div></div></section>';
   };
@@ -146,7 +179,7 @@
       '<div class="two">' + b.lists.map(listCard).join('') + '</div></section>';
   };
   function listCard(l) {
-    return '<article class="card list-card rv ' + (l.style === 'white' ? '' : l.style) + '"><p class="cap">' + esc(l.title) + '</p><ul>' + l.items.map(function (i) { return '<li>' + esc(i) + '</li>'; }).join('') + '</ul></article>';
+    return '<article class="card list-card rv ' + (l.style === 'white' ? '' : l.style) + (l.icons ? ' with-ico' : '') + '"><p class="cap">' + esc(l.title) + '</p><ul>' + l.items.map(function (i, k) { return '<li class="rv">' + (l.icons ? '<span class="li-ico">' + ico(l.icons[k]) + '</span>' : '') + '<span>' + esc(i) + '</span></li>'; }).join('') + '</ul></article>';
   }
 
   R.persona = function (b) {
@@ -162,12 +195,12 @@
       '<div class="p-name"><h3>' + esc(b.name) + '</h3><p>' + esc(b.sub) + '</p></div></article>' +
       '<article class="card dark radar-card rv"><p class="cap">' + esc(b.cardTitle) + '</p><svg class="radar" viewBox="-200 -150 400 300" role="img" aria-label="Диаграмма навыков" data-radar></svg>' +
       '<div class="rates">' + rates + '</div><p class="radar-note" data-note></p></article>' +
-      '<div class="p-stats">' + b.stats.map(function (s) { return '<article class="card p-stat rv ' + (s.style === 'white' ? '' : s.style) + '"><b>' + esc(s.value) + '</b><span>' + esc(s.text) + '</span></article>'; }).join('') + '</div>' +
+      '<div class="p-stats">' + b.stats.map(function (s) { return '<article class="card p-stat rv ' + (s.style === 'white' ? '' : s.style) + '"><b>' + num(s.value) + '</b><span>' + esc(s.text) + '</span></article>'; }).join('') + '</div>' +
       '</div></section>';
   };
 
   R.quote = function (b) {
-    return '<section class="wrap"><blockquote class="quote rv">' + QUOTE + '<div><p>' + esc(b.text) + '</p><cite>' + esc(b.cite) + '</cite></div></blockquote></section>';
+    return '<section class="wrap"><blockquote class="quote rv">' + QUOTE + '<div><p>' + esc(b.text) + '</p><cite>' + (b.avatar ? img({ src: b.avatar, alt: '', w: 160, h: 160 }, 'quote-av') : '') + '<span>' + esc(b.cite) + '</span></cite></div></blockquote></section>';
   };
 
   R.overview = function (b) {
@@ -176,8 +209,8 @@
       '<div class="ov-actions">' + b.buttons.map(function (x) { return btn(x); }).join('') + '</div></div>' +
       '<div class="ov-icons rv" aria-hidden="true">' + b.tiles.map(function (t, i) { return '<div class="ov-tile t' + (i + 1) + '">' + img({ src: t.src, alt: '', w: 800, h: 960 }) + '<span class="lbl"><i></i>' + esc(t.label) + '</span></div>'; }).join('') + '</div></div>' +
       '<div class="ov-cards">' + b.cards.map(function (c) {
-        var body = c.flags ? '<div class="ov-flags">' + c.flags.map(function (f) { return '<span>' + esc(f) + '</span>'; }).join('') + '</div>' : '<strong' + (c.big ? ' class="big"' : '') + '>' + esc(c.value) + '</strong>';
-        return '<article class="card ov-card rv ' + (c.style || '') + '"><div class="row"><span class="cap">' + esc(c.cap) + '</span><span class="num-tag">' + esc(c.num) + '</span></div>' + body + '</article>';
+        var body = c.flags ? '<div class="ov-flags">' + c.flags.map(function (f) { return '<span>' + esc(f) + '</span>'; }).join('') + '</div>' : '<strong' + (c.big ? ' class="big pop"' : '') + '>' + esc(c.value) + '</strong>';
+        return '<article class="card ov-card rv ' + (c.style || '') + '"><div class="row"><span class="ov-ico">' + ico(c.icon || 'plus') + '</span><span class="num-tag">' + esc(c.num) + '</span></div><span class="cap" style="margin-top:18px">' + esc(c.cap) + '</span>' + body + '</article>';
       }).join('') + '</div></section>';
   };
 
@@ -243,7 +276,7 @@
         ? '<video src="' + esc(src(t.video)) + '" poster="' + esc(src(t.img)) + '" muted loop playsinline preload="none" width="' + t.w + '" height="' + t.h + '" aria-label="' + esc(t.title) + '" data-autoplay></video>'
         : img({ src: t.img, alt: t.title + ': скриншот платформы', w: t.w, h: t.h });
       return '<article class="card shot rv' + (t.wide ? ' wide' : '') + (t.phone ? ' phone' : '') + '" data-lang="' + esc(t.tag) + '"' + (t.wide ? ' data-wide' : '') + '><div class="shot-img">' + media + '<span class="track-chip"><i></i>' + esc(t.chip) + '</span></div>' +
-        '<div class="shot-body"><span class="num-tag">' + n + '</span><div><h3>' + esc(t.title) + '</h3><p>' + esc(t.text) + '</p></div></div></article>';
+        '<div class="shot-body"><span class="shot-ico">' + (t.icon ? ico(t.icon) : '<span class="num-tag">' + n + '</span>') + '</span><div><h3>' + esc(t.title) + '</h3><p>' + esc(t.text) + '</p></div></div></article>';
     }).join('');
     var after = b.button ? '<p class="tour-cta rv">' + btn(b.button) + (b.note ? '<span>' + esc(b.note) + '</span>' : '') + '</p>' : '';
     return '<section class="wrap sec" id="' + (b.id || 'tour') + '" data-block="Реклама платформы · экскурсия"><div class="tr-head rv"><div><p class="meta"><i></i>' + esc(b.meta) + '</p><h2 class="sec-title">' + esc(b.title) + '</h2>' + (b.text ? '<p class="sec-text" style="margin-top:20px;max-width:640px">' + esc(b.text) + '</p>' : '') + '</div>' + tabs + '</div><div class="tour" data-tracks>' + cards + '</div>' + after + '</section>';
@@ -255,7 +288,7 @@
     var person = '<article class="card p-photo rv">' + img(p.image) + '<div class="p-pills">' + p.pills.map(function (x) { return '<span class="p-pill"><i></i>' + esc(x[0]) + ' <b>' + esc(x[1]) + '</b></span>'; }).join('') + '</div>' +
       '<div class="p-name"><h3>' + esc(p.name) + '</h3><p>' + esc(p.sub) + '</p>' + (p.text ? '<p class="p-text">' + esc(p.text) + '</p>' : '') + '</div></article>';
     var price = '<article class="card price rv ' + pr.style + '"><div class="row"><span class="cap">' + esc(pr.cap) + '</span></div><h3>' + esc(pr.name) + '</h3>' +
-      '<div class="amt">' + esc(pr.amount) + '<small>' + esc(pr.note) + '</small></div><ul>' + pr.list.map(function (l) { return '<li>' + ico('check') + esc(l) + '</li>'; }).join('') + '</ul>' +
+      '<div class="amt pop">' + esc(pr.amount) + '<small>' + esc(pr.note) + '</small></div><ul>' + pr.list.map(function (l, k) { return '<li class="rv">' + ico(pr.icons ? pr.icons[k] : 'check') + esc(l) + '</li>'; }).join('') + '</ul>' +
       '<div class="price-actions">' + pr.buttons.map(function (x) { return btn(x); }).join('') + '</div>' + (pr.src ? '<p class="price-src">' + esc(pr.src) + '</p>' : '') + '</article>';
     return '<section class="wrap sec" id="' + (b.id || 'price') + '" data-block="Реклама платформы · цена">' + head(b) + '<div class="offer">' + person + price + '</div></section>';
   };
@@ -369,7 +402,7 @@
     var g = '';
     for (var l = 1; l <= 5; l++) g += '<polygon class="grid" points="' + skills.map(function (s, i) { return pt(i, RAD * l / 5).join(','); }).join(' ') + '"/>';
     skills.forEach(function (s, i) { var p = pt(i, RAD); g += '<line class="grid" x1="0" y1="0" x2="' + p[0] + '" y2="' + p[1] + '"/>'; var t = pt(i, RAD + 26); g += '<text x="' + t[0].toFixed(1) + '" y="' + (t[1] + 5).toFixed(1) + '" text-anchor="' + (Math.abs(t[0]) < 5 ? 'middle' : t[0] > 0 ? 'start' : 'end') + '">' + esc(s.name) + '</text>'; });
-    g += '<path class="shape" d=""/>' + skills.map(function (s, i) { return '<circle class="pt" r="6" data-i="' + i + '"/>'; }).join('');
+    g += '<g class="shape-g"><path class="shape" d=""/>' + skills.map(function (s, i) { return '<circle class="pt" r="6" data-i="' + i + '"/>'; }).join('') + '</g>';
     svg.innerHTML = g;
     function draw() {
       var pts = skills.map(function (s, i) { return pt(i, RAD * s.v / 5); });
@@ -401,12 +434,15 @@
   }
 
   function initReveal() {
-    var els = document.querySelectorAll('.rv, .bars, .lvl-bar, [data-ring], [data-count-to]');
+    var els = document.querySelectorAll('.rv, .bars, .lvl-bar, .pop, .radar, .b3-clock, [data-ring], [data-count-to]');
     if (RM || !('IntersectionObserver' in window)) {
       els.forEach(function (e) { e.classList.add('in'); if (e.hasAttribute('data-ring')) e.style.strokeDashoffset = e.getAttribute('data-ring'); });
       return;
     }
     document.documentElement.classList.add('js-anim');
+    // карточки одного ряда появляются по очереди (80 мс)
+    var seen = new Map();
+    document.querySelectorAll('.rv').forEach(function (e) { var p = e.parentElement, k = seen.get(p) || 0; if (k) e.style.transitionDelay = Math.min(k * 80, 400) + 'ms'; seen.set(p, k + 1); });
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (en) {
         if (!en.isIntersecting) return;
@@ -419,6 +455,7 @@
     els.forEach(function (e) { io.observe(e); });
   }
 
-  build();
+  var APP = document.getElementById('app');
+  if (!APP.hasAttribute('data-prerendered')) build();
   initShare(); initVideo(); initTabs(); initHeat(); initRadar(); initReveal();
 })();
