@@ -563,7 +563,7 @@ p{text-wrap:pretty}
   .hero-photo{position:relative;top:auto;right:auto;height:auto;width:100%;max-width:none;margin:24px 0 24px;border-radius:20px}
   .chip-float{height:34px;font-size:13px;padding:0 12px 0 8px}
   .chip-float .dot-ring{width:16px;height:16px;box-shadow:inset 0 0 0 4px #c9d6ff}
-  .chip-float.c2{left:16px!important;right:auto!important;top:auto!important;bottom:28px!important}
+  .chip-float.c2{left:36px!important;right:auto!important;top:auto!important;bottom:36px!important}
   .bento3{grid-template-columns:1fr}
   .bento3 .card{min-height:230px;padding:28px 24px}
   .b3-title{font-size:24px}
