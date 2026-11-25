@@ -3,23 +3,29 @@
 Копия дизайна Cognix (Behance, AI Education Website) как шаблон для сайта под кодовое слово.
 Реклама в конце: английский Диаса (Dias English) и турецкий Тимура (Alterna Timur).
 
-- `gh/index.html` — главная, с рекламой.
-- `gh/lesson/index.html` — та же страница без рекламы, с короткой концовкой.
+- `gh/en/` — гайд про английский, в конце реклама Dias English; `gh/en/lesson/` — без рекламы.
+- `gh/tr/` — гайд про турецкий, в конце реклама Alterna Timur; `gh/tr/lesson/` — без рекламы.
+- `gh/index.html` — выбор языка.
+- Реклама по подходу сайта 05 «Экскурсия внутрь»: 8 крупных реальных скриншотов платформы с подписями (блок `tour`).
 - `design/` — скриншоты образца.
 - `qa/` — проверки и скриншоты.
 
 ## Как поменять текст, ссылки, порядок блоков
-Всё в одном файле `gh/assets/content.js`.
+Контент двух вариаций: `content/content.en.json` и `content/content.tr.json`. После правки собрать обе одной командой:
+
+```bash
+node build.mjs
+```
 
 - `blocks` — список блоков сверху вниз. Блок можно удалить, скопировать или переставить.
 - `ad: true` — блок только на главной. `lesson: true` — только на `/lesson/`.
-- `links` — ссылки на покупку. В блоках пишется `@english`, `@turkish`, `@turkishWhatsApp`, и подставится ссылка отсюда.
-- Типы блоков: `hero`, `bento3`, `about`, `problemSolution`, `steps`, `features`, `heatmap` (планер недели), `persona` (профиль навыков с диаграммой), `quote`, `overview`, `tracks` (карточки с вкладками), `who`, `counts`, `authors`, `prices`, `reviews`, `final`.
+- `links` — ссылка на покупку (`@buy`) и вопросы (`@ask`). В блоках пишется `@buy`, и подставится ссылка отсюда.
+- Типы блоков: `hero`, `bento3`, `about`, `problemSolution`, `steps`, `features`, `heatmap` (планер недели), `persona` (профиль навыков с диаграммой), `quote`, `overview`, `tour` (экскурсия: скриншоты с подписями и вкладками), `offer` (автор и цена), `who`, `reviews`, `final`. Есть и запасные: `tracks`, `counts`, `authors`, `prices`.
 - Разметка каждого типа в `gh/assets/render.js` (объект `R`). Иконки там же, в `ICONS`.
 
 ## Цвета и шрифты
 CSS-переменные в начале `gh/assets/style.css` (`--blue`, `--lime`, `--bg`, `--ink`, `--display`, `--body`).
-Быстро поменять цвет можно и в `content.js` → `theme`, например `theme: { blue: '#1f4fd8' }`.
+Быстро поменять цвет можно и в JSON → `theme`, например `theme: { blue: '#1f4fd8' }`.
 
 Шрифты лежат в `gh/assets/fonts/`: Space Grotesk (латиница и цифры), Manrope (кириллица в заголовках), Inter (текст).
 
@@ -30,7 +36,7 @@ CSS-переменные в начале `gh/assets/style.css` (`--blue`, `--lim
 cwebp -q 80 -resize 1200 0 фото.jpg -o gh/media/имя.webp
 ```
 
-Потом путь `media/имя.webp` и размеры `w`, `h` пишутся в `content.js`.
+Потом путь `media/имя.webp` и размеры `w`, `h` пишутся в JSON.
 
 ## Проверка и публикация
 ```bash
@@ -38,6 +44,6 @@ python3 -m http.server 8505 --directory gh
 node qa/check.mjs http://127.0.0.1:8505/
 ```
 
-Скрипт проверяет 1440, 834 и 390: нет бокового скролла, все картинки загрузились, нет ошибок в консоли. Скриншоты кладёт в `qa/shots/`.
+Скрипт проверяет все пять страниц на 1440, 834 и 390: нет бокового скролла, все картинки загрузились, нет ошибок в консоли. Скриншоты кладёт в `qa/shots/`.
 
 Публикуется папка `gh/` в ветку `main` репозитория `stellasdeutsch-dev/kw-05-cobalt` (GitHub Pages из корня).

@@ -126,7 +126,7 @@
       '<article class="card lime f-side rv"><div class="f-head"><h3 class="f-title">' + esc(f.feedback.title) + '</h3><span class="f-ico">' + ico('bolt') + '</span></div><p class="f-text">' + esc(f.feedback.text) + '</p><p class="f-note"><b>' + ico('check') + '</b>' + esc(f.feedback.note) + '</p></article>' +
       '<article class="card f-third rv"><div class="f-head"><h3 class="f-title">' + esc(f.progress.title) + '</h3><span class="f-ico">' + ico('chart') + '</span></div><p class="f-text">' + esc(f.progress.text) + '</p><div class="bars" aria-hidden="true">' + f.progress.bars.map(function (h) { return '<i style="--h:' + h + '%"></i>'; }).join('') + '</div></article>' +
       '<article class="card dark f-third rv"><div class="f-head"><h3 class="f-title">' + esc(f.tutor.title) + '</h3><span class="f-ico">' + ico('question') + '</span></div><p class="f-text">' + esc(f.tutor.text) + '</p><div class="chat"><p class="q">' + esc(f.tutor.q) + '</p><p class="a">' + esc(f.tutor.a) + '</p></div></article>' +
-      '<article class="card blue f-third rv"><div class="f-head"><h3 class="f-title">' + esc(f.rooms.title) + '</h3><span class="f-ico">' + ico('users') + '</span></div><p class="f-text">' + esc(f.rooms.text) + '</p><div class="room"><span class="avatars">' + img({ src: 'media/av-dias.webp', alt: '', w: 160, h: 160 }) + img({ src: 'media/av-timur.webp', alt: '', w: 160, h: 160 }) + '<span class="plus">' + ico('plus') + '</span></span><span class="room-tag">' + esc(f.rooms.tag) + '</span></div></article>' +
+      '<article class="card blue f-third rv"><div class="f-head"><h3 class="f-title">' + esc(f.rooms.title) + '</h3><span class="f-ico">' + ico('users') + '</span></div><p class="f-text">' + esc(f.rooms.text) + '</p><div class="room"><span class="avatars">' + (f.rooms.avatars || []).map(function (a) { return img({ src: a, alt: '', w: 160, h: 160 }); }).join('') + '<span class="plus">' + ico('plus') + '</span></span><span class="room-tag">' + esc(f.rooms.tag) + '</span></div></article>' +
       '</div></section>';
   };
 
@@ -140,7 +140,7 @@
       });
     });
     g += '</div>';
-    return '<section class="wrap sec" id="' + b.id + '" data-heat=\'' + esc(JSON.stringify({ rows: b.rows, days: b.days })) + '\'>' + head(b) +
+    return '<section class="wrap sec" id="' + b.id + '" data-heat=\'' + esc(JSON.stringify({ rows: b.rows, days: b.days, key: b.storageKey || 'kw05-week' })) + '\'>' + head(b) +
       '<div class="heat rv"><div class="heat-top"><p class="cap">' + esc(b.cardTitle) + '</p><span class="heat-peak"><i></i><span data-peak>Выбери время</span></span></div>' + g +
       '<div class="heat-foot"><span><span data-count>Отмечено 0 из ' + (b.rows.length * b.days.length) + '.</span> ' + esc(b.hint) + '</span><button type="button" class="heat-reset" data-reset>' + ico('reset') + 'Сбросить</button></div></div>' +
       '<div class="two">' + b.lists.map(listCard).join('') + '</div></section>';
@@ -154,7 +154,7 @@
       var bt = ''; for (var v = 1; v <= 5; v++) bt += '<button type="button" data-skill="' + i + '" data-v="' + v + '" aria-pressed="' + (v === s.v) + '" aria-label="' + esc(s.name) + ': ' + v + '">' + v + '</button>';
       return '<span>' + esc(s.name) + '</span><div class="rate">' + bt + '</div>';
     }).join('');
-    return '<section class="wrap sec" id="' + b.id + '" data-skills=\'' + esc(JSON.stringify(b.skills)) + '\'>' + head(b) + '<div class="persona">' +
+    return '<section class="wrap sec" id="' + b.id + '" data-skills=\'' + esc(JSON.stringify(b.skills)) + '\' data-key="' + esc(b.storageKey || 'kw05-skills') + '">' + head(b) + '<div class="persona">' +
       '<article class="card p-photo rv">' + img(b.image) + '<div class="p-pills">' +
       '<span class="p-pill"><i></i>Сильный навык <b data-strong></b></span>' +
       '<span class="p-pill"><i></i>Начать с <b data-weak></b></span>' +
@@ -234,6 +234,32 @@
     }).join('') + '</div></section>';
   };
 
+  /* Экскурсия внутрь: крупные скриншоты платформы с подписями и вкладками-разделами */
+  R.tour = function (b) {
+    var tabs = b.tabs ? '<div class="tabs" role="tablist" aria-label="Разделы">' + b.tabs.map(function (t, i) { return '<button type="button" class="tab" role="tab" data-tab="' + t.key + '" aria-selected="' + (i === 0) + '">' + esc(t.text) + '</button>'; }).join('') + '</div>' : '';
+    var cards = b.items.map(function (t, i) {
+      var n = ('0' + (i + 1)).slice(-2);
+      var media = t.video
+        ? '<video src="' + esc(src(t.video)) + '" poster="' + esc(src(t.img)) + '" muted loop playsinline preload="none" width="' + t.w + '" height="' + t.h + '" aria-label="' + esc(t.title) + '" data-autoplay></video>'
+        : img({ src: t.img, alt: t.title + ': скриншот платформы', w: t.w, h: t.h });
+      return '<article class="card shot rv' + (t.wide ? ' wide' : '') + (t.phone ? ' phone' : '') + '" data-lang="' + esc(t.tag) + '"' + (t.wide ? ' data-wide' : '') + '><div class="shot-img">' + media + '<span class="track-chip"><i></i>' + esc(t.chip) + '</span></div>' +
+        '<div class="shot-body"><span class="num-tag">' + n + '</span><div><h3>' + esc(t.title) + '</h3><p>' + esc(t.text) + '</p></div></div></article>';
+    }).join('');
+    var after = b.button ? '<p class="tour-cta rv">' + btn(b.button) + (b.note ? '<span>' + esc(b.note) + '</span>' : '') + '</p>' : '';
+    return '<section class="wrap sec" id="' + (b.id || 'tour') + '" data-block="Реклама платформы · экскурсия"><div class="tr-head rv"><div><p class="meta"><i></i>' + esc(b.meta) + '</p><h2 class="sec-title">' + esc(b.title) + '</h2>' + (b.text ? '<p class="sec-text" style="margin-top:20px;max-width:640px">' + esc(b.text) + '</p>' : '') + '</div>' + tabs + '</div><div class="tour" data-tracks>' + cards + '</div>' + after + '</section>';
+  };
+
+  /* Автор и цена рядом */
+  R.offer = function (b) {
+    var p = b.person, pr = b.price;
+    var person = '<article class="card p-photo rv">' + img(p.image) + '<div class="p-pills">' + p.pills.map(function (x) { return '<span class="p-pill"><i></i>' + esc(x[0]) + ' <b>' + esc(x[1]) + '</b></span>'; }).join('') + '</div>' +
+      '<div class="p-name"><h3>' + esc(p.name) + '</h3><p>' + esc(p.sub) + '</p>' + (p.text ? '<p class="p-text">' + esc(p.text) + '</p>' : '') + '</div></article>';
+    var price = '<article class="card price rv ' + pr.style + '"><div class="row"><span class="cap">' + esc(pr.cap) + '</span></div><h3>' + esc(pr.name) + '</h3>' +
+      '<div class="amt">' + esc(pr.amount) + '<small>' + esc(pr.note) + '</small></div><ul>' + pr.list.map(function (l) { return '<li>' + ico('check') + esc(l) + '</li>'; }).join('') + '</ul>' +
+      '<div class="price-actions">' + pr.buttons.map(function (x) { return btn(x); }).join('') + '</div>' + (pr.src ? '<p class="price-src">' + esc(pr.src) + '</p>' : '') + '</article>';
+    return '<section class="wrap sec" id="' + (b.id || 'price') + '" data-block="Реклама платформы · цена">' + head(b) + '<div class="offer">' + person + price + '</div></section>';
+  };
+
   R.final = function (b) {
     return '<section class="wrap" data-block="' + (b.ad ? 'Реклама платформы, финал' : 'Концовка') + '"><div class="final rv"><h2 class="final-title">' + b.lines.map(function (l) { return '<span>' + esc(l) + '</span>'; }).join('') + '</h2>' +
       '<div class="final-phone">' + img(b.phone) + '</div>' +
@@ -293,7 +319,7 @@
       t.addEventListener('click', function () {
         tabs.forEach(function (x) { x.setAttribute('aria-selected', x === t); });
         var k = t.getAttribute('data-tab'), first = true;
-        wrap.querySelectorAll('.track').forEach(function (c) {
+        wrap.querySelectorAll('.track, .shot').forEach(function (c) {
           var on = k === 'all' || c.getAttribute('data-lang') === k;
           c.hidden = !on;
           if (k !== 'all') { c.classList.toggle('wide', on && first); if (on) first = false; }
@@ -302,13 +328,13 @@
         });
       });
     });
-    wrap.querySelectorAll('.track.wide').forEach(function (c) { c.setAttribute('data-wide', ''); });
+    wrap.querySelectorAll('.track.wide, .shot.wide').forEach(function (c) { c.setAttribute('data-wide', ''); });
   }
 
   function initHeat() {
     var sec = document.querySelector('[data-heat]'); if (!sec) return;
     var cfg = JSON.parse(sec.getAttribute('data-heat'));
-    var KEY = 'kw05-week', state = {};
+    var KEY = cfg.key || 'kw05-week', state = {};
     try { state = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { state = {}; }
     var cells = sec.querySelectorAll('.cell'), total = cells.length;
     function paint() {
@@ -336,7 +362,7 @@
   function initRadar() {
     var sec = document.querySelector('[data-skills]'); if (!sec) return;
     var skills = JSON.parse(sec.getAttribute('data-skills'));
-    var KEY = 'kw05-skills';
+    var KEY = sec.getAttribute('data-key') || 'kw05-skills';
     try { var saved = JSON.parse(localStorage.getItem(KEY) || 'null'); if (saved && saved.length === skills.length) saved.forEach(function (v, i) { skills[i].v = v; }); } catch (e) {}
     var svg = sec.querySelector('[data-radar]'), N = skills.length, RAD = 110;
     function pt(i, r) { var a = -Math.PI / 2 + i * 2 * Math.PI / N; return [Math.cos(a) * r, Math.sin(a) * r]; }
